@@ -170,6 +170,8 @@ extern int leo_init(void);
 extern int leo_setup(char*);
 extern int kyrofb_init(void);
 extern int kyrofb_setup(char*);
+extern int ipodfb_init(void);
+extern int ipodfb_setup(char*);
 extern int mc68x328fb_init(void);
 extern int mc68x328fb_setup(char *);
 
@@ -289,6 +291,9 @@ static struct {
 #endif
 #ifdef CONFIG_FB_LEO
 	{ "leofb", leo_init, leo_setup },
+#endif
+#ifdef CONFIG_FB_IPOD
+        { "ipod", ipodfb_init, ipodfb_setup },
 #endif
 
 	/*

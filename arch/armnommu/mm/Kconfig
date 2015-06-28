@@ -215,6 +215,18 @@ config CPU_ARM1026
 	  Say Y if you want support for the ARM1026EJ-S processor.
 	  Otherwise, say N.
 
+# PP5002
+config CPU_PP5002
+	bool "Support PP5002 processor" if !ARCH_IPOD
+	default y if ARCH_IPOD
+	select CPU_32v4
+	help
+	  A 32-bit RISC microprocessor based on the ARM7TDMI processor core
+	  designed by Portal Player.
+
+	  Say Y if you want support for the PP5002 processor.
+	  Otherwise, say N.
+
 # Figure out what processor architecture version we should be using.
 # This defines the compiler instruction set which depends on the machine type.
 config CPU_32v3

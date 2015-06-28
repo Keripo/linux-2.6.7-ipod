@@ -86,6 +86,8 @@ machine-$(CONFIG_ARCH_S3C44B0)		:= s3c44b0x
 	textaddr-$(CONFIG_ARCH_S3C44B0)		:= 0x0c008000
 machine-$(CONFIG_ARCH_S5C7375) 		:= s5c7375
 	textaddr-$(CONFIG_ARCH_S5C7375) 	:= 0x00008000
+machine-$(CONFIG_ARCH_IPOD) 		:= ipod
+	textaddr-$(CONFIG_ARCH_IPOD) 		:= 0x28008000
 
 # set the environment variables and export
 MACHINE  := $(machine-y)
@@ -158,7 +160,11 @@ zImage Image bootpImage uImage: vmlinux
 uCImage: vmlinux linux.bin
 
 linux.bin: vmlinux FORCE
-	@$(OBJCOPY) $(OBJCOPYFLAGS) vmlinux $@
+	@$(AS) -o arch/armnommu/mach-ipod/pad.o arch/armnommu/mach-ipod/pad.S
+	@$(OBJCOPY) $(OBJCOPYFLAGS) vmlinux $@.tmp
+	@$(OBJCOPY) $(OBJCOPYFLAGS) arch/armnommu/mach-ipod/pad.o pad.bin
+	@cat pad.bin $@.tmp > $@
+	@rm $@.tmp pad.bin
 	@echo '  Kernel: $@ is ready'
 	
 zinstall install: vmlinux

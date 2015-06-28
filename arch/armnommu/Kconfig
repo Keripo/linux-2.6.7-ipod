@@ -140,6 +140,10 @@ config ARCH_S5C7375
 	help
 	  Samsung's S5C7375 16/32-bit SOC(ARM920T) for internal use.
 
+config ARCH_IPOD
+	bool "iPod"
+	help
+	  The Apple iPod MP3 player.
 endchoice
 
 config SET_MEM_PARAM
@@ -155,6 +159,7 @@ config DRAM_BASE
 	default 0x0C000000 if ARCH_S3C44B0
 	default 0x00000000 if ARCH_S5C7375
 	default 0x00000000 if ARCH_ESPD_4510B
+	default 0x28000000 if ARCH_IPOD
 	default 0x00800000
 
 config DRAM_SIZE
@@ -164,6 +169,7 @@ config DRAM_SIZE
 	default 0x01000000 if ARCH_S3C44B0
 	default 0x00400000 if ARCH_S5C7375
 	default 0x00800000 if ARCH_ESPD_4510B
+	default 0x02000000 if ARCH_IPOD
 	default 0x00800000
 
 config FLASH_MEM_BASE
@@ -184,11 +190,20 @@ config FLASH_SIZE
 	default 0x00200000 if ARCH_ESPD_4510B
 	default 0x00400000
 
+config LARGE_ALLOCS
+	bool "Allow allocating large blocks (> 1MB) of memory"
+	help
+	  Allow the slab memory allocator to keep chains for very large
+	  memory sizes - upto 32MB. You may need this if your system has
+	  a lot of RAM, and you need to able to allocate very large
+	  contiguous chunks. If unsure, say N.
+
 source "arch/armnommu/mach-atmel/Kconfig"
 source "arch/armnommu/mach-s3c3410/Kconfig"
 source "arch/armnommu/mach-s3c44b0x/Kconfig"
 source "arch/armnommu/mach-s5c7375/Kconfig"
 source "arch/armnommu/mach-espd_4510b/Kconfig"
+source "arch/armnommu/mach-ipod/Kconfig"
 
 source arch/armnommu/mm/Kconfig
 
