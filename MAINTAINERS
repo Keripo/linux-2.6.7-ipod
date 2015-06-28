@@ -694,7 +694,7 @@ L:	dri-devel@lists.sourceforge.net
 S:	Supported
 
 DSCC4 DRIVER
-P:	François Romieu
+P:	Fran?is Romieu
 M:	romieu@cogenit.fr
 M:	romieu@ensta.fr
 S:	Maintained
@@ -1604,7 +1604,7 @@ L:	http://lists.infradead.org/mailman/listinfo/linux-pcmcia
 S:	Unmaintained
 
 PCNET32 NETWORK DRIVER
-P:	Thomas Bogendörfer
+P:	Thomas Bogend?fer
 M:	tsbogend@alpha.franken.de
 L:	linux-net@vger.kernel.org
 S:	Maintained
@@ -1772,7 +1772,7 @@ L:	linux-scsi@vger.kernel.org
 S:	Maintained
 
 SCSI TAPE DRIVER
-P:	Kai Mäkisara
+P:	Kai M?isara
 M:	Kai.Makisara@kolumbus.fi
 L:	linux-scsi@vger.kernel.org
 S:	Maintained
@@ -2010,6 +2010,11 @@ P:	Jonathan Buzzard
 M:	jonathan@buzzard.org.uk
 L:	tlinux-users@tce.toshiba-dme.co.jp
 W:	http://www.buzzard.org.uk/toshiba/
+S:	Maintained
+
+TRACE32 JTAG1 SERIAL EMULATION DRIVER
+P:	Hyok S. Choi
+M:	hyok.choi@samsung.com
 S:	Maintained
 
 TRIDENT 4DWAVE/SIS 7018 PCI AUDIO CORE
@@ -2296,6 +2301,12 @@ P:	D. Jeff Dionne (created first uClinux port)
 M:	jeff@uclinux.org
 W:	http://www.uclinux.org/
 L:	uclinux-dev@uclinux.org
+S:	Maintained
+
+UCLINUX FOR ARM
+P:	Hyok S. Choi
+M:	hyok.choi@samsung.com
+W:	http://opensrc.sec.samsung.com/
 S:	Maintained
 
 UCLINUX FOR NEC V850

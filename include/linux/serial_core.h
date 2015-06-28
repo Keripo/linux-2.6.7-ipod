@@ -88,6 +88,12 @@
 /* SGI IP22 aka Indy / Challenge S / Indigo 2 */
 #define PORT_IP22ZILOG	56
 
+/* JTAG emulation port types */
+#define PORT_T32_JTAG1	60
+
+/* Samsung S3C4510B */
+#define PORT_S3C4510B   61
+
 #ifdef __KERNEL__
 
 #include <linux/config.h>
